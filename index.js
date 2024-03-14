@@ -6,16 +6,11 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 require('dotenv').config();
-
 const uri = process.env.MONGODB_URI;
-
 
 app.use(cors());
 app.use(express.json());
 
-
-
-// const uri = "mongodb+srv://has_admin:iGKyCn1dGrpnarkx@cluster0.xz7hxyp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 const client = new MongoClient(uri, {serverApi: {version: ServerApiVersion.v1,strict: true,deprecationErrors: true,}});
 
 async function run() {
